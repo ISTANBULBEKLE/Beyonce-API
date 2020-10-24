@@ -65,7 +65,7 @@ app.post("/albums/albumAdd", function (req, res) {
   if(newAlbum !== {} ){
       albumsData.push(newAlbum);
       res.json({ success: true });
-    } else (res.send('Bad request'));
+  } else (res.send('Bad request'));
   
 });
 
@@ -84,7 +84,6 @@ app.post("/albums/albumUpdate/:id", function (req, res) {
 // Deleting the album
 app.delete("/albums/deleteAlbum/:id", function (req, res) {
   let {id} = req.params;
-  const values  = req.body;
 
   albumsData.forEach((e)=> {
     if(id === e.albumId){
